@@ -27,9 +27,9 @@ export class App extends React.Component {
       name,
       number,
     };
-    this.setState({
-      contacts: [...contacts, newContact]
-    });
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, newContact]
+    }));
   };
 
   deleteContact = (contactId) => {
