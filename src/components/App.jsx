@@ -21,8 +21,7 @@ export class App extends React.Component {
   };
 
   addContact = (name, number) => {
-    const { contacts } = this.state;
-    const newContact = {
+      const newContact = {
       id: nanoid(),
       name,
       number,
