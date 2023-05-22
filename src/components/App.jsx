@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactsForm';
 import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
+import { BodyDivCSS, DivCSS } from 'components/Styles.styles'
 
 export class App extends React.Component {
   state = {
@@ -44,13 +45,15 @@ export class App extends React.Component {
     );
 
     return (
-      <div>
-        <h1>Phonebook</h1>
-        <ContactForm contacts={contacts} addContact={this.addContact} />
-        <h2>Contacts</h2>
-        <Filter filter={filter} onChange={this.handleFilterChange} />
-        <ContactList contacts={filteredContacts} deleteContact={this.deleteContact}/>
-      </div>
+      <BodyDivCSS>
+        <DivCSS>
+          <h1>Phonebook</h1>
+          <ContactForm contacts={contacts} addContact={this.addContact} />
+          <h2>Contacts</h2>
+          <Filter filter={filter} onChange={this.handleFilterChange} />
+          <ContactList contacts={filteredContacts} deleteContact={this.deleteContact}/>
+        </DivCSS>
+      </BodyDivCSS>
     );
   }
 }
